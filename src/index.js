@@ -48,10 +48,9 @@ function useEffect(callback, deps) {
 
 function App() {
   const [num1, setNum1] = useState(0);
-  //   let conditionFlag = true;
-  //   if (conditionFlag) {
-  //     const [testNum] = useState(0);
-  //   }
+//   if (num1 === 0) {
+//     const [testNum] = useState("");
+//   }
   const [num2, setNum2] = useState(0);
 
   useEffect(() => {
