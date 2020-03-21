@@ -4,6 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 常用hook
 useState/useEffect/useRef/useCallback/useMemo/useContext/useReducer
 ## 实现的hook
+```!
+源码是用链表实现的，这里简化展示，用了数组
+```
 useState 、 useEffect
 ## Available Scripts
 
