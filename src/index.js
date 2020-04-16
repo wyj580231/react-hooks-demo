@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 //import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import DefaultApp from './App';
 
 const stateCache = [];
 let stateCursor = 0;
@@ -65,6 +66,7 @@ function App() {
   }, [num1]);
   return (
     <div>
+      <DefaultApp/>
       <div>num1:{num1}</div>
       <div>num2:{num2}</div>
       <button onClick={() => setNum1(num1 + 1)}>add num1</button>

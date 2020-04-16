@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer } from "react";
+import "./App.css";
+import Context from "./context";
+import Header from "./Header";
+import Content from "./Content";
+
+const initState = {
+  count: 0,
+};
+function countReducer(state, action) {
+  switch (action.type) {
+    case "increment":
+      return { ...state, count: state.count + 1 };
+    case "decrement":
+      return { ...state, count: state.count - 1 };
+    default:
+      return state;
+  }
+}
 
 function App() {
+  const [state, dispatch] = useReducer(countReducer, initState);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Context.Provider value={{ state, dispatch }}>
+        <Header />
+        <Content />
+      </Context.Provider>
     </div>
   );
 }
