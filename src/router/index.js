@@ -27,6 +27,12 @@ const ContextTest = () => (
     <ContextTestPage />
   </Suspense>
 );
+const LazyImageDemoPage = lazy(() => import("../pages/demo/lazyImage"));
+const LazyImageDemo = () => (
+  <Suspense fallback={Loading}>
+    <LazyImageDemoPage />
+  </Suspense>
+);
 
 const AppRouter = () => {
   return (
@@ -35,6 +41,7 @@ const AppRouter = () => {
       <Route exact path="/test/xss" component={XSSTest} />
       <Route exact path="/test/event" component={EventTest} />
       <Route exact path="/test/context" component={ContextTest} />
+      <Route exact path="/demo/lazyImage" component={LazyImageDemo} />
     </Switch>
   );
 };

@@ -1,0 +1,16 @@
+#lazyImageDemo .left {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+#lazyImageDemo .right {
+  width: 50%;
+  float: right;
+  text-align: center;
+}
+.lazy-img-observer,
+.lazy-img-scroll {
+  display: block;
+  margin: auto;
+  border: none;
+}
